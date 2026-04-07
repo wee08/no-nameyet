@@ -1,0 +1,45 @@
+import dayjs from "dayjs";
+import assets from "../assets/assets";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Calendar from "./Calendar";
+import { useState } from "react";
+const HeaderBar = () => {
+  const m = dayjs().format("MMMM");
+  const y = dayjs().format("YYYY");
+  const [active, setActive] = useState(null);
+  return (
+    <div className="col-start-2 ml-14 grid grid-rows-2">
+      <div className="flex justify-between items-center row-end-1">
+        <div className=" col-start-1 font-bold text-white text-2xl flex items-center gap-4">
+          {m} {y}
+          <div className="flex ml-8 gap-8">
+            <ChevronLeft strokeWidth={4} />
+            <ChevronRight strokeWidth={4} />
+          </div>
+        </div>
+        <div className={`flex  items-center  rounded-full bg-white/20}`}>
+          {assets.menu2.map((item, idx) => {
+            const { icon: Icon } = item;
+            return (
+              <div
+                onClick={() => setActive(idx)}
+                key={idx}
+                className={`w-full  px-2 py-1 border border-white/80
+                ${active === idx ? "bg-10per/55" : " "} 
+                ${idx == 0 ? "rounded-l-full" : "rounded-r-full"}`}>
+                <Icon strokeWidth={2} stroke="white" />
+              </div>
+            );
+          })}
+
+          {/* <div className="m-0 border-r-2 border-white/70 border-1/2 h-5" /> */}
+        </div>
+      </div>
+      <div className="row-start-1 row-span-full my-4">
+        <Calendar />
+      </div>
+    </div>
+  );
+};
+
+export default HeaderBar;

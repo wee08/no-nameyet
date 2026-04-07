@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --primary--color: #2b2a2a;
+  --10percent--color: #00ff9c;
+  --white--color: #ffff;
+  --black--color: #000000;
+}
+@theme {
+  --color-primary: #2b2a2;
+  --color-10per: #00ff9c;
+  --color-white: #ffff;
+  --color-black: #000;
+}
+body {
+  background-color: var(--primary--color);
+}
+/* .active {
+  width: fit-content;
+  padding: 0 15px 0 15px;
+  border-radius: 120vh;
+  background-color: var(--10percent--color);
+  align-items: center;
+} */
