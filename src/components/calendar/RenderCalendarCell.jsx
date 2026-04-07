@@ -1,34 +1,24 @@
-import React from "react";
 import dayjs from "dayjs";
+import DisplayPreviousDate from "./DisplayPreviousDate";
 
 const RenderCalendarCell = () => {
-  let current = dayjs();
+  const daysOfMonth = [];
 
+  let current = dayjs();
   const start = current.startOf("month");
   const startDay = start.day();
 
-  const preMonth = current.subtract(1, "month").daysInMonth();
-  const nextMonth = current.add(1, "month").daysInMonth();
-
   const total = current.daysInMonth();
   const currentDay = current.date();
-
-  const daysOfMonth = [];
-
-  let AddStartDay = startDay;
 
   for (let i = 1; i <= total; i++) {
     daysOfMonth.push(i);
   }
 
-  console.log(startDay);
-
   return (
     <>
+      <DisplayPreviousDate />
       {daysOfMonth.map((day, idx) => {
-        {
-          AddStartDay += 1;
-        }
         return (
           <div
             key={idx}

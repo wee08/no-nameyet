@@ -1,8 +1,9 @@
 import dayjs from "dayjs";
 import assets from "../assets/assets";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Calendar from "./Calendar";
 import { useState } from "react";
+import Calendar from "./calendar/Calendar";
+
 const HeaderBar = () => {
   const m = dayjs().format("MMMM");
   const y = dayjs().format("YYYY");
