@@ -33,3 +33,5 @@ fixed day of next month
 - for prediction i think we will have the same issue in the DisplayNextDate conponent.
   fixing it
 - right now i let it fill the whole data in the calendar's cell
+- solution is you need to make a conditio for the lastIdx variable if startDayProp is 0 we will return empty array instead of entire data
+  const lastIdx = startDayProp === 0 ? [] : dayOfPreM.slice(getLastIdx);
