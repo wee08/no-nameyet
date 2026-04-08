@@ -1,15 +1,24 @@
 import dayjs from "dayjs";
 import assets from "../assets/assets";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { use, useState } from "react";
 import Calendar from "./calendar/Calendar";
 
 const HeaderBar = () => {
   let [curM, setCurM] = useState(dayjs().month());
-
   const m = dayjs().month(curM).format("MMMM");
-  const y = dayjs().format("YYYY");
-  console.log(curM);
+
+  let y = dayjs().year();
+
+  let [yearCount, setYearCount] = useState(y);
+
+  if (curM > 11) {
+    setCurM(0);
+    setYearCount((yearCount += 1));
+  } else if (curM < 0) {
+    setCurM(11);
+    setYearCount((yearCount -= 1));
+  }
 
   const [active, setActive] = useState(null);
 
@@ -19,7 +28,7 @@ const HeaderBar = () => {
         <div className=" col-start-1 font-bold text-white text-2xl flex items-center gap-4">
           <div className="flex items-center gap-8 w-48">
             <p>{m}</p>
-            <p>{y}</p>
+            <p>{yearCount}</p>
           </div>
           <div className="flex ml-8 gap-8">
             <ChevronLeft

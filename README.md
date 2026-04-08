@@ -35,3 +35,10 @@ fixed day of next month
 - right now i let it fill the whole data in the calendar's cell
 - solution is you need to make a conditio for the lastIdx variable if startDayProp is 0 we will return empty array instead of entire data
   const lastIdx = startDayProp === 0 ? [] : dayOfPreM.slice(getLastIdx);
+
+* display a proper month and year on the header
+  display month and keep the chevron icon stable
+  for the year when month is greater then 11 we will reset back to 0
+  and if it less then 0 we will reset it to 11
+
+- another bug the start day gone wrong when the year reverses ?
