@@ -28,4 +28,8 @@ implement dynamic calendar to see the next coming date in the calendar's cells
 fixed day of next month
 
 - it should fill in the remain grid not render the day of next month to the grid (if we do that it will increase the column)
-  ?? we still have the same bug but it happens less after fixed the bug above
+  ?? we still have the same bug but it happens less after fixed the bug above ?
+  -- so i spot this issue it will hanpen when the start day is 0. once it is equal to zero the .splice() method will contain the zero value mean that we will take all of the previous month's day in the array.
+- for prediction i think we will have the same issue in the DisplayNextDate conponent.
+  fixing it
+- right now i let it fill the whole data in the calendar's cell

@@ -8,13 +8,15 @@ const DisplayPreviousDate = ({ startDayProp, inc, curM }) => {
   const getLastIdx = -startDayProp;
   for (let i = 1; i <= total; i++) [dayOfPreM.push(i)];
   const lastIdx = dayOfPreM.slice(getLastIdx);
+  console.log(getLastIdx);
+  console.log(lastIdx);
   // .slice(vlu) get last index of arr
   return (
     <>
       {lastIdx.map((item, idx) => (
         <div
           key={idx}
-          style={{ gridColumnStart: idx + 1 }}
+          style={getLastIdx === 0 ? {} : { gridColumnStart: idx + 1 }}
           className={`render-bd w-full py-3 text-center flex justify-center items-center text-xl`}>
           <p className=" opacity-60">{item}</p>
         </div>
