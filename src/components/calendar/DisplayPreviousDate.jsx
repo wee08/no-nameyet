@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-const DisplayPreviousDate = ({ startDayProp, inc, curM }) => {
+const DisplayPreviousDate = ({ startDayProp, curM }) => {
   const current = dayjs().month(curM);
   const PreM = current.subtract(1, "month");
   const total = PreM.daysInMonth();
@@ -9,8 +9,6 @@ const DisplayPreviousDate = ({ startDayProp, inc, curM }) => {
   for (let i = 1; i <= total; i++) [dayOfPreM.push(i)];
   const lastIdx = startDayProp === 0 ? [] : dayOfPreM.slice(getLastIdx);
 
-  console.log(getLastIdx);
-  console.log(lastIdx);
   // .slice(vlu) get last index of arr
   return (
     <>

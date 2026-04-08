@@ -7,8 +7,9 @@ import Calendar from "./calendar/Calendar";
 const HeaderBar = () => {
   let [curM, setCurM] = useState(dayjs().month());
 
-  const m = dayjs().format("MMMM");
+  const m = dayjs().month(curM).format("MMMM");
   const y = dayjs().format("YYYY");
+  console.log(curM);
 
   const [active, setActive] = useState(null);
 
@@ -16,7 +17,10 @@ const HeaderBar = () => {
     <div className="col-start-2 ml-14 grid grid-rows-2">
       <div className="flex justify-between items-center row-end-1">
         <div className=" col-start-1 font-bold text-white text-2xl flex items-center gap-4">
-          {m} {y}
+          <div className="flex items-center gap-8 w-48">
+            <p>{m}</p>
+            <p>{y}</p>
+          </div>
           <div className="flex ml-8 gap-8">
             <ChevronLeft
               strokeWidth={4}
