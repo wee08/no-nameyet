@@ -1,12 +1,13 @@
 import dayjs from "dayjs";
 import DisplayPreviousDate from "./DisplayPreviousDate";
 
-const RenderCalendarCell = () => {
+const RenderCalendarCell = ({ startDayProp }) => {
   const daysOfMonth = [];
 
   let current = dayjs();
   const start = current.startOf("month");
   const startDay = start.day();
+  startDayProp = startDay;
 
   const total = current.daysInMonth();
   const currentDay = current.date();
@@ -17,7 +18,7 @@ const RenderCalendarCell = () => {
 
   return (
     <>
-      <DisplayPreviousDate />
+      <DisplayPreviousDate startDayProp={startDayProp} />
       {daysOfMonth.map((day, idx) => {
         return (
           <div
