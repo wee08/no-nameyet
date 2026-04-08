@@ -25,8 +25,8 @@ const RenderCalendarCell = ({ startDayProp }) => {
           <div
             key={idx}
             style={idx === 0 ? { gridColumnStart: startDay + 1 } : {}}
-            className={`w-full my-5 text-center flex justify-center items-center text-xl 
-            ${currentDay === day ? "bg-10per/50 rounded-full" : ""}
+            className={`render-bd w-full py-5 text-center flex justify-center items-center text-xl 
+            ${currentDay === day ? "bg-10per/50 " : ""}
             `}>
             {day}
           </div>

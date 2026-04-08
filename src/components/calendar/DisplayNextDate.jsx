@@ -25,8 +25,8 @@ const DisplayNextDate = ({ startDayProp, currentMonth }) => {
       {startIdx.map((item, idx) => (
         <div
           key={idx}
-          className={`col-start-${(incrementSD += 1)} w-full my-5 text-center flex justify-center items-center text-xl opacity-60`}>
-          <p>{item}</p>
+          className={`render-bd col-start-${(incrementSD += 1)} w-full py-5 text-center flex justify-center items-center text-xl `}>
+          <p className=" opacity-60">{item}</p>
         </div>
       ))}
     </>
