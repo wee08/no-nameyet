@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import DisplayPreviousDate from "./DisplayPreviousDate";
+import DisplayNextDate from "./DisplayNextDate";
 
 const RenderCalendarCell = ({ startDayProp }) => {
   const daysOfMonth = [];
@@ -31,6 +32,7 @@ const RenderCalendarCell = ({ startDayProp }) => {
           </div>
         );
       })}
+      <DisplayNextDate startDayProp={startDayProp} currentMonth={total} />
     </>
   );
 };

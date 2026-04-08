@@ -20,3 +20,5 @@
     </div>
 
 implement the previous day of the month in the calendar table and makes it dynamic base on each month
+
+implement the next day of month by calculate how many grid are remained and use those to get the start days of the next month and after use all of the data to fills in the remianing grid
