@@ -7,7 +7,8 @@ const Calendar = ({ curM }) => {
         {days.map((d, idx) => (
           <div
             key={idx}
-            className={`font-bold w-full items-center flex justify-center col-start-${idx + 1}`}>
+            style={{ gridColumnStart: idx + 1 }}
+            className={`font-bold w-full items-center flex justify-center `}>
             {/* <div className={`font-bold`}>{d.toUpperCase()}</div> */}
             {d.toUpperCase()}
           </div>

@@ -17,7 +17,6 @@ const RenderCalendarCell = ({ startDayProp, curM }) => {
   for (let i = 1; i <= total; i++) {
     daysOfMonth.push(i);
   }
-
   return (
     <>
       <DisplayPreviousDate startDayProp={startDayProp} curM={curM} />

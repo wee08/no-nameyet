@@ -19,13 +19,12 @@ const DisplayNextDate = ({ startDayProp, currentMonth, curM }) => {
     dayOfNextM.push(i);
   }
   const startIdx = dayOfNextM.slice(0, emtGrid);
-
   return (
     <>
       {startIdx.map((item, idx) => (
         <div
           key={idx}
-          className={`render-bd col-start-${(incrementSD += 1)} w-full py-3 text-center flex justify-center items-center text-xl `}>
+          className={`render-bd w-full py-3 text-center flex justify-center items-center text-xl `}>
           <p className=" opacity-60">{item}</p>
         </div>
       ))}
