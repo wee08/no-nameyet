@@ -1,10 +1,11 @@
 import dayjs from "dayjs";
 import assets from "../assets/assets";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, icons } from "lucide-react";
 import { useState } from "react";
 import Calendar from "./calendar/Calendar";
 
 const HeaderBar = () => {
+  let [curM, setCurM] = useState(dayjs().month());
   const m = dayjs().format("MMMM");
   const y = dayjs().format("YYYY");
   const [active, setActive] = useState(null);
@@ -15,7 +16,12 @@ const HeaderBar = () => {
           {m} {y}
           <div className="flex ml-8 gap-8">
             <ChevronLeft strokeWidth={4} />
-            <ChevronRight strokeWidth={4} />
+            <ChevronRight
+              strokeWidth={4}
+              onClick={() => {
+                setCurM((curM += 1));
+              }}
+            />
           </div>
         </div>
         <div className={`flex  items-center  rounded-full bg-white/20}`}>
@@ -37,7 +43,7 @@ const HeaderBar = () => {
         </div>
       </div>
       <div className="row-start-1 row-span-full my-4">
-        <Calendar />
+        <Calendar curM={curM} />
       </div>
     </div>
   );

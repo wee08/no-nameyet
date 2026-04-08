@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
-const DisplayNextDate = ({ startDayProp, currentMonth }) => {
-  const current = dayjs();
+const DisplayNextDate = ({ startDayProp, currentMonth, curM }) => {
+  const current = dayjs().month(curM);
   const nextM = current.add(1, "month");
   const total = nextM.daysInMonth();
   const totalGrid = 42;
@@ -25,7 +25,7 @@ const DisplayNextDate = ({ startDayProp, currentMonth }) => {
       {startIdx.map((item, idx) => (
         <div
           key={idx}
-          className={`render-bd col-start-${(incrementSD += 1)} w-full py-5 text-center flex justify-center items-center text-xl `}>
+          className={`render-bd col-start-${(incrementSD += 1)} w-full py-3 text-center flex justify-center items-center text-xl `}>
           <p className=" opacity-60">{item}</p>
         </div>
       ))}
