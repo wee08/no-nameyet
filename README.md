@@ -45,3 +45,11 @@ fixed day of next month
   when the year below 2026 I can consume that when the year is below current year the previous day will render wrong, as i spot i can see that on December 2025 the previous day has only 1 but the calendar i have built is added 2 previous day
 - this problem occours because the month which we increase or decrease it still in the same current year which mean even we try to increase or decrease it, it will change only month within the same year
 - the year is changed only number not an exact year.
+
+* to solve it we need to implement these two line of code
+
+  const curD = dayjs().date();
+  let current = dayjs(`${yearCount}-${curM + 1}-${curD}`);
+
+  curD to get current day for using in current varibale
+  current variable we need to implement a dynamic year month and day if we don't implement the day so the current day will be constant.

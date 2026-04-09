@@ -65,7 +65,7 @@ const HeaderBar = () => {
         </div>
       </div>
       <div className="row-start-1 row-span-full my-4">
-        <Calendar curM={curM} />
+        <Calendar curM={curM} yearCount={yearCount} />
       </div>
     </div>
   );

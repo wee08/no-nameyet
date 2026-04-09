@@ -1,5 +1,5 @@
 import RenderCalendarCell from "./RenderCalendarCell";
-const Calendar = ({ curM }) => {
+const Calendar = ({ curM, yearCount }) => {
   const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
   return (
     <div className="bg-black w-full h-full rounded-4xl p-4 ">
@@ -13,7 +13,7 @@ const Calendar = ({ curM }) => {
             {d.toUpperCase()}
           </div>
         ))}
-        <RenderCalendarCell curM={curM} />
+        <RenderCalendarCell curM={curM} yearCount={yearCount} />
       </div>
     </div>
   );
