@@ -53,3 +53,5 @@ fixed day of next month
 
   curD to get current day for using in current varibale
   current variable we need to implement a dynamic year month and day if we don't implement the day so the current day will be constant.
+
+* after debugging this project the code is really messy even i understand it so before I build another feature and render more UI I will make the code more cleaner and easier to read to be able to make it scaleable

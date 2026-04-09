@@ -9,12 +9,6 @@ const RenderCalendarCell = ({ startDayProp, curM, yearCount }) => {
   let current = dayjs(`${yearCount}-${curM + 1}-${curD}`);
 
   // curM is 3 so in this format the dayjs notified it as March
-  const curr = dayjs(`${yearCount}-${curM + 1}-01`);
-  console.log("start M", curr.startOf("month"));
-  console.log("start ", curr.startOf("month").day());
-  console.log("end", curr.endOf("month").day());
-  console.log("curM ", curM);
-  console.log("year count ", yearCount);
 
   const currentDay = current.date();
   const start = current.startOf("month");
