@@ -42,3 +42,6 @@ fixed day of next month
   and if it less then 0 we will reset it to 11
 
 - another bug the start day gone wrong when the year reverses ?
+  when the year below 2026 I can consume that when the year is below current year the previous day will render wrong, as i spot i can see that on December 2025 the previous day has only 1 but the calendar i have built is added 2 previous day
+- this problem occours because the month which we increase or decrease it still in the same current year which mean even we try to increase or decrease it, it will change only month within the same year
+- the year is changed only number not an exact year.

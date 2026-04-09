@@ -19,6 +19,7 @@ const HeaderBar = () => {
     setCurM(11);
     setYearCount((yearCount -= 1));
   }
+  console.log("curM: ", curM);
 
   const [active, setActive] = useState(null);
 

@@ -9,6 +9,7 @@ const DisplayPreviousDate = ({ startDayProp, curM }) => {
   for (let i = 1; i <= total; i++) [dayOfPreM.push(i)];
   const lastIdx = startDayProp === 0 ? [] : dayOfPreM.slice(getLastIdx);
 
+  console.log("get last idx:  ", getLastIdx);
   // .slice(vlu) get last index of arr
   return (
     <>
