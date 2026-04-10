@@ -1,49 +1,52 @@
-import dayjs from "dayjs";
 import assets from "../assets/assets";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { use, useState } from "react";
+import { ChevronLeft, ChevronRight, Section } from "lucide-react";
+import { useState } from "react";
 import Calendar from "./calendar/Calendar";
+import {
+  getMonthName,
+  getCurrentMonthIndex,
+  getCurrentYear,
+} from "./utils/dateUtils";
+import dayjs from "dayjs";
 
 const HeaderBar = () => {
-  let [curM, setCurM] = useState(dayjs().month());
-  const m = dayjs().month(curM).format("MMMM");
-
-  let y = dayjs().year();
-
-  let [yearCount, setYearCount] = useState(y);
-
-  if (curM > 11) {
-    setCurM(0);
-    setYearCount((yearCount += 1));
-  } else if (curM < 0) {
-    setCurM(11);
-    setYearCount((yearCount -= 1));
-  }
-  console.log("curM: ", curM);
-
   const [active, setActive] = useState(null);
+  const [date, setDate] = useState(dayjs());
+  let [curM, setCurM] = useState(getCurrentMonthIndex());
+  let [yearCount, setYearCount] = useState(getCurrentYear());
+  const month = getMonthName(curM);
+
+  const nextMonth = () => {
+    setCurM((pre) => {
+      if (pre === 11) {
+        setYearCount((y) => y + 1);
+        return 0;
+      }
+      return pre + 1;
+    });
+  };
+
+  const previousMonth = () => {
+    setCurM((pre) => {
+      if (pre === 0) {
+        setYearCount((y) => y - 1);
+        return 11;
+      }
+      return pre - 1;
+    });
+  };
 
   return (
     <div className="col-start-2 ml-14 grid grid-rows-2">
       <div className="flex justify-between items-center row-end-1">
         <div className=" col-start-1 font-bold text-white text-2xl flex items-center gap-4">
           <div className="flex items-center gap-8 w-48">
-            <p>{m}</p>
+            <p>{month}</p>
             <p>{yearCount}</p>
           </div>
           <div className="flex ml-8 gap-8">
-            <ChevronLeft
-              strokeWidth={4}
-              onClick={() => {
-                setCurM((curM -= 1));
-              }}
-            />
-            <ChevronRight
-              strokeWidth={4}
-              onClick={() => {
-                setCurM((curM += 1));
-              }}
-            />
+            <ChevronLeft strokeWidth={4} onClick={previousMonth} />
+            <ChevronRight strokeWidth={4} onClick={nextMonth} />
           </div>
         </div>
         <div className={`flex  items-center  rounded-full bg-white/20}`}>
@@ -60,8 +63,6 @@ const HeaderBar = () => {
               </div>
             );
           })}
-
-          {/* <div className="m-0 border-r-2 border-white/70 border-1/2 h-5" /> */}
         </div>
       </div>
       <div className="row-start-1 row-span-full my-4">
