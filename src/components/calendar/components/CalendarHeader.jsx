@@ -7,7 +7,6 @@ import {
   getCurrentMonthIndex,
   getCurrentYear,
 } from "../../utils/dateUtils";
-import dayjs from "dayjs";
 
 const CalendarHeader = () => {
   const [active, setActive] = useState(null);
@@ -34,7 +33,7 @@ const CalendarHeader = () => {
       return pre - 1;
     });
   };
-
+  console.log(yearCount);
   return (
     <div className="col-start-2 ml-14 grid grid-rows-2">
       <div className="flex justify-between items-center row-end-1">
