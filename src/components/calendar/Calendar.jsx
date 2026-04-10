@@ -1,10 +1,10 @@
+import { daysList } from "../utils/dateUtils";
 import RenderCalendarCell from "./RenderCalendarCell";
 const Calendar = ({ curM, yearCount }) => {
-  const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
   return (
     <div className="bg-black w-full h-full rounded-4xl p-4 ">
       <div className=" text-white font-ligh rounded-2xl  text-center grid grid-cols-7 grid-rows-7  border border-white/40">
-        {days.map((d, idx) => (
+        {daysList.map((d, idx) => (
           <div
             key={idx}
             style={{ gridColumnStart: idx + 1 }}
