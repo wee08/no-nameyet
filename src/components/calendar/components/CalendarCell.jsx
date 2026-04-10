@@ -1,8 +1,7 @@
 import dayjs from "dayjs";
 import DisplayPreviousDate from "./DisplayPreviousDate";
 import DisplayNextDate from "./DisplayNextDate";
-
-const RenderCalendarCell = ({ startDayProp, curM, yearCount }) => {
+const CalednarCell = ({ startDayProp, curM, yearCount }) => {
   const daysOfMonth = [];
   const curD = dayjs().date();
 
@@ -45,4 +44,4 @@ const RenderCalendarCell = ({ startDayProp, curM, yearCount }) => {
   );
 };
 
-export default RenderCalendarCell;
+export default CalednarCell;

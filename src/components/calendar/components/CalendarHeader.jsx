@@ -1,17 +1,16 @@
-import assets from "../assets/assets";
+import assets from "../../../assets/assets";
 import { ChevronLeft, ChevronRight, Section } from "lucide-react";
 import { useState } from "react";
-import Calendar from "./calendar/Calendar";
+import Calendar from "../Calendar";
 import {
   getMonthName,
   getCurrentMonthIndex,
   getCurrentYear,
-} from "./utils/dateUtils";
+} from "../../utils/dateUtils";
 import dayjs from "dayjs";
 
-const HeaderBar = () => {
+const CalendarHeader = () => {
   const [active, setActive] = useState(null);
-  const [date, setDate] = useState(dayjs());
   let [curM, setCurM] = useState(getCurrentMonthIndex());
   let [yearCount, setYearCount] = useState(getCurrentYear());
   const month = getMonthName(curM);
@@ -72,4 +71,4 @@ const HeaderBar = () => {
   );
 };
 
-export default HeaderBar;
+export default CalendarHeader;

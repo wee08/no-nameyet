@@ -1,5 +1,5 @@
-import React from "react";
-import ContainerCom from "./components/ContainerCom";
+import ContainerCom from "./components/layout/ContainerCom";
+
 const App = () => {
   return (
     <>
