@@ -15,25 +15,20 @@ const CalendarHeader = () => {
   const month = getMonthName(curM);
 
   const nextMonth = () => {
-    setCurM((pre) => {
-      if (pre === 11) {
-        setYearCount((y) => y + 1);
-        return 0;
-      }
-      return pre + 1;
-    });
+    setCurM(curM + 1);
+    if (curM === 11) {
+      setYearCount(yearCount + 1);
+      setCurM(0);
+    }
   };
 
   const previousMonth = () => {
-    setCurM((pre) => {
-      if (pre === 0) {
-        setYearCount((y) => y - 1);
-        return 11;
-      }
-      return pre - 1;
-    });
+    setCurM(curM - 1);
+    if (curM === 0) {
+      setYearCount(yearCount - 1);
+      setCurM(11);
+    }
   };
-  console.log(yearCount);
   return (
     <div className="col-start-2 ml-14 grid grid-rows-2">
       <div className="flex justify-between items-center row-end-1">
