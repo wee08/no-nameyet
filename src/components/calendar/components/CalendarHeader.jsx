@@ -2,44 +2,25 @@ import assets from "../../../assets/assets";
 import { ChevronLeft, ChevronRight, Section } from "lucide-react";
 import { useState } from "react";
 import Calendar from "../Calendar";
-import {
-  getMonthName,
-  getCurrentMonthIndex,
-  getCurrentYear,
-} from "../../utils/dateUtils";
+import useCalendar from "../hooks/useCalendar";
 
 const CalendarHeader = () => {
   const [active, setActive] = useState(null);
-  let [curM, setCurM] = useState(getCurrentMonthIndex());
-  let [yearCount, setYearCount] = useState(getCurrentYear());
-  const month = getMonthName(curM);
 
-  const nextMonth = () => {
-    setCurM(curM + 1);
-    if (curM === 11) {
-      setYearCount(yearCount + 1);
-      setCurM(0);
-    }
-  };
+  const { getPrevoiusMonth, getNextMonth, monthName, yearCount, currentMonth } =
+    useCalendar();
 
-  const previousMonth = () => {
-    setCurM(curM - 1);
-    if (curM === 0) {
-      setYearCount(yearCount - 1);
-      setCurM(11);
-    }
-  };
   return (
     <div className="col-start-2 ml-14 grid grid-rows-2">
       <div className="flex justify-between items-center row-end-1">
         <div className=" col-start-1 font-bold text-white text-2xl flex items-center gap-4">
           <div className="flex items-center gap-8 w-48">
-            <p>{month}</p>
+            <p>{monthName}</p>
             <p>{yearCount}</p>
           </div>
           <div className="flex ml-8 gap-8">
-            <ChevronLeft strokeWidth={4} onClick={previousMonth} />
-            <ChevronRight strokeWidth={4} onClick={nextMonth} />
+            <ChevronLeft strokeWidth={4} onClick={getPrevoiusMonth} />
+            <ChevronRight strokeWidth={4} onClick={getNextMonth} />
           </div>
         </div>
         <div className={`flex  items-center  rounded-full bg-white/20}`}>
@@ -59,7 +40,7 @@ const CalendarHeader = () => {
         </div>
       </div>
       <div className="row-start-1 row-span-full my-4">
-        <Calendar curM={curM} yearCount={yearCount} />
+        <Calendar month={currentMonth} year={yearCount} />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
-const DisplayNextDate = ({ startDayProp, currentMonth, curM }) => {
-  const current = dayjs().month(curM);
+const DisplayNextDate = ({ startDayProp, currentMonth, month }) => {
+  const current = dayjs().month(month);
   const nextM = current.add(1, "month");
   const total = nextM.daysInMonth();
   const totalGrid = 42;

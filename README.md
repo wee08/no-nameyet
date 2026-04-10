@@ -49,7 +49,7 @@ fixed day of next month
 * to solve it we need to implement these two line of code
 
   const curD = dayjs().date();
-  let current = dayjs(`${yearCount}-${curM + 1}-${curD}`);
+  let current = dayjs(`${yearCount}-${month + 1}-${curD}`);
 
   curD to get current day for using in current varibale
   current variable we need to implement a dynamic year month and day if we don't implement the day so the current day will be constant.

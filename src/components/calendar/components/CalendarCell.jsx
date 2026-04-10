@@ -1,13 +1,13 @@
 import dayjs from "dayjs";
 import DisplayPreviousDate from "./DisplayPreviousDate";
 import DisplayNextDate from "./DisplayNextDate";
-const CalednarCell = ({ startDayProp, curM, yearCount }) => {
+const CalednarCell = ({ startDayProp, month, year }) => {
   const daysOfMonth = [];
   const curD = dayjs().date();
 
-  let current = dayjs(`${yearCount}-${curM + 1}-${curD}`);
+  let current = dayjs(`${year}-${month + 1}-${curD}`);
 
-  // curM is 3 so in this format the dayjs notified it as March
+  // month is 3 so in this format the dayjs notified it as March
 
   const currentDay = current.date();
   const start = current.startOf("month");
@@ -21,7 +21,7 @@ const CalednarCell = ({ startDayProp, curM, yearCount }) => {
   }
   return (
     <>
-      <DisplayPreviousDate startDayProp={startDayProp} curM={curM} />
+      <DisplayPreviousDate startDayProp={startDayProp} month={month} />
       {daysOfMonth.map((day, idx) => {
         return (
           <div
@@ -38,7 +38,7 @@ const CalednarCell = ({ startDayProp, curM, yearCount }) => {
       <DisplayNextDate
         startDayProp={startDayProp}
         currentMonth={total}
-        curM={curM}
+        month={month}
       />
     </>
   );

@@ -1,7 +1,7 @@
 import { daysList } from "../utils/dateUtils";
 import CalednarCell from "./components/CalendarCell";
 
-const Calendar = ({ curM, yearCount }) => {
+const Calendar = ({ month, year }) => {
   return (
     <div className="bg-black w-full h-full rounded-4xl p-4 ">
       <div className=" text-white font-ligh rounded-2xl  text-center grid grid-cols-7 grid-rows-7  border border-white/40">
@@ -14,7 +14,7 @@ const Calendar = ({ curM, yearCount }) => {
             {d.toUpperCase()}
           </div>
         ))}
-        <CalednarCell curM={curM} yearCount={yearCount} />
+        <CalednarCell month={month} year={year} />
       </div>
     </div>
   );
