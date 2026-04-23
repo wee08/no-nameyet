@@ -1,7 +1,5 @@
 import {
-  Calendar,
   CalendarDays,
-  CalendarRange,
   ChevronDown,
   CircleCheck,
   CircleCheckBig,

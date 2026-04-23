@@ -1,5 +1,5 @@
 import assets from "../../../assets/assets";
-import { ChevronLeft, ChevronRight, Section } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import Calendar from "../Calendar";
 import useCalendar from "../hooks/useCalendar";

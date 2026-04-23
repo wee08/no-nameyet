@@ -25,6 +25,12 @@ const useCalendar = () => {
       setCurrenMonth(11);
     }
   };
+  const [isSelected, setIsSelected] = useState(false);
+  const handleSelected = () => {
+    setIsSelected(true);
+  };
+
+  const renderTableBorder = (tb) => {};
 
   return {
     getCurrentMonthIndex,
@@ -32,6 +38,7 @@ const useCalendar = () => {
     getCurrentYear,
     getPrevoiusMonth,
     getNextMonth,
+    handleSelected,
     currentMonth,
     yearCount,
     monthName,
